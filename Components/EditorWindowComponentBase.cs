@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if UNITY_EDITOR
+using System;
 using UnityEngine;
 using System.Reflection;
 using System.Collections;
@@ -84,3 +85,4 @@ namespace EditorWinEx
         protected virtual void OnDisable() { }
     }
 }
+#endif

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿#if UNITY_EDITOR
+using UnityEngine;
 using System.Collections;
 using System.Reflection;
 using System;
@@ -80,3 +81,4 @@ namespace EditorWinEx.Internal
 
     }
 }
+#endif

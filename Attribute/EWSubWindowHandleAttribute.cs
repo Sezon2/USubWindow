@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if UNITY_EDITOR
+using System;
 using UnityEngine;
 using System.Collections;
 
@@ -8,31 +9,32 @@ using System.Collections;
 [AttributeUsage(AttributeTargets.Class, AllowMultiple = true, Inherited = false)]
 public class EWSubWindowHandleAttribute : Attribute
 {
-    /// <summary>
-    /// 子窗口容器类型
-    /// </summary>
-    public Type containerType;
+	/// <summary>
+	/// 子窗口容器类型
+	/// </summary>
+	public Type containerType;
 
-    /// <summary>
-    /// 是否激活
-    /// </summary>
-    public bool active;
+	/// <summary>
+	/// 是否激活
+	/// </summary>
+	public bool active;
 
-    /// <summary>
-    /// 窗口样式类型
-    /// </summary>
-    public SubWindowStyle windowStyle;
+	/// <summary>
+	/// 窗口样式类型
+	/// </summary>
+	public SubWindowStyle windowStyle;
 
-    /// <summary>
-    /// 子窗口标签
-    /// </summary>
-    /// <param name="containerType">子窗口容器类型</param>
-    /// <param name="windowStyle">窗口风格</param>
-    /// <param name="active">是否激活</param>
-    public EWSubWindowHandleAttribute(Type containerType, SubWindowStyle windowStyle = SubWindowStyle.Default, bool active = true)
-    {
-        this.containerType = containerType;
-        this.active = active;
-        this.windowStyle = windowStyle;
-    }
+	/// <summary>
+	/// 子窗口标签
+	/// </summary>
+	/// <param name="containerType">子窗口容器类型</param>
+	/// <param name="windowStyle">窗口风格</param>
+	/// <param name="active">是否激活</param>
+	public EWSubWindowHandleAttribute(Type containerType, SubWindowStyle windowStyle = SubWindowStyle.Default, bool active = true)
+	{
+		this.containerType = containerType;
+		this.active = active;
+		this.windowStyle = windowStyle;
+	}
 }
+#endif

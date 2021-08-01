@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if UNITY_EDITOR
+using System;
 using UnityEngine;
 using System.Collections;
 using System.Reflection;
@@ -111,3 +112,4 @@ public class GridSubWindow : SubWindow
             m_SceneViewPosition.y = tileCountY * kTileSize;
     }
 }
+#endif
