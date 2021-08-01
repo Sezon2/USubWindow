@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿#if UNITY_EDITOR
+using UnityEngine;
 using System;
 using System.Reflection;
 using System.Collections;
@@ -121,3 +122,4 @@ public class ToolBarTree : EditorWindowComponentBase
         Sort();
     }
 }
+#endif
