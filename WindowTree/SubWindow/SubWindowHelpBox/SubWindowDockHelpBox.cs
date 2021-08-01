@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿#if UNITY_EDITOR
+using UnityEngine;
 using System.Collections;
 using UnityEditor;
 
@@ -118,3 +119,4 @@ namespace EditorWinEx
         }
     }
 }
+#endif

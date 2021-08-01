@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if UNITY_EDITOR
+using System;
 using UnityEditor;
 using UnityEngine;
 using System.Collections;
@@ -10,24 +11,25 @@ using System.Collections;
 [AttributeUsage(AttributeTargets.Method, AllowMultiple = false, Inherited = false)]
 public class EWToolBarAttribute : Attribute
 {
-    /// <summary>
-    /// 菜单项
-    /// </summary>
-    public string menuItem;
+	/// <summary>
+	/// 菜单项
+	/// </summary>
+	public string menuItem;
 
-    /// <summary>
-    /// 优先级
-    /// </summary>
-    public int priority;
+	/// <summary>
+	/// 优先级
+	/// </summary>
+	public int priority;
 
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="menuItem">菜单项</param>
-    /// <param name="priority">优先级-每1000分为一组</param>
-    public EWToolBarAttribute(string menuItem, int priority = 1000)
-    {
-        this.menuItem = menuItem;
-        this.priority = priority;
-    }
+	/// <summary>
+	/// 
+	/// </summary>
+	/// <param name="menuItem">菜单项</param>
+	/// <param name="priority">优先级-每1000分为一组</param>
+	public EWToolBarAttribute(string menuItem, int priority = 1000)
+	{
+		this.menuItem = menuItem;
+		this.priority = priority;
+	}
 }
+#endif

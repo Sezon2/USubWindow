@@ -1,46 +1,48 @@
-﻿using System;
+﻿#if UNITY_EDITOR
+using System;
 using UnityEngine;
 using System.Collections;
 using System.Reflection;
 
 namespace EditorWinEx.Internal
 {
-    /// <summary>
-    /// MsgBox组件绘制器
-    /// </summary>
-    internal abstract class EWMsgBoxDrawer : EWComponentDrawerBase
-    {
+	/// <summary>
+	/// MsgBox组件绘制器
+	/// </summary>
+	internal abstract class EWMsgBoxDrawer : EWComponentDrawerBase
+	{
 
-        protected abstract EWRectangle Rectangle { get; }
+		protected abstract EWRectangle Rectangle { get; }
 
-        public void DrawMsgBox(Rect rect, System.Object obj)
-        {
-            Rect main = Rectangle.GetRect(rect);
+		public void DrawMsgBox(Rect rect, System.Object obj)
+		{
+			Rect main = Rectangle.GetRect(rect);
 
-            GUI.Box(main, "", GUIStyleCache.GetStyle("WindowBackground"));
-            OnDrawMsgBox(main, obj);
-        }
+			GUI.Box(main, "", GUIStyleCache.GetStyle("WindowBackground"));
+			OnDrawMsgBox(main, obj);
+		}
 
-        public virtual void Serialize()
-        {
-            if (IsInitialized)
-                OnSerialize();
-        }
+		public virtual void Serialize()
+		{
+			if (IsInitialized)
+				OnSerialize();
+		}
 
-        protected override void OnDestroy()
-        {
-        }
+		protected override void OnDestroy()
+		{
+		}
 
-        protected override void OnEnable()
-        {
-        }
+		protected override void OnEnable()
+		{
+		}
 
-        protected override void OnDisable()
-        {
-        }
+		protected override void OnDisable()
+		{
+		}
 
-        protected virtual void OnSerialize() { }
+		protected virtual void OnSerialize() { }
 
-        protected abstract void OnDrawMsgBox(Rect rect, System.Object obj);
-    }
+		protected abstract void OnDrawMsgBox(Rect rect, System.Object obj);
+	}
 }
+#endif

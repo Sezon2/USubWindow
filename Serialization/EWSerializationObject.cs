@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿#if UNITY_EDITOR
+using UnityEngine;
 using System;
 using System.Collections;
 using System.Reflection;
@@ -63,3 +64,4 @@ namespace EditorWinEx.Internal.Serialization
         }
     }
 }
+#endif

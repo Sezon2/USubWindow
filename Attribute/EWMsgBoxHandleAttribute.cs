@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if UNITY_EDITOR
+using System;
 using UnityEngine;
 using System.Collections;
 
@@ -8,20 +9,21 @@ using System.Collections;
 [AttributeUsage(AttributeTargets.Class, AllowMultiple = true, Inherited = false)]
 public class EWMsgBoxHandleAttribute : Attribute
 {
-    public Type targetType;
-    /// <summary>
-    /// 消息框ID
-    /// </summary>
-    public int id;
+	public Type targetType;
+	/// <summary>
+	/// 消息框ID
+	/// </summary>
+	public int id;
 
-    /// <summary>
-    /// 消息框
-    /// </summary>
-    /// <param name="targetType">消息框绘制目标的类型</param>
-    /// <param name="id">消息框ID</param>
-    public EWMsgBoxHandleAttribute(Type targetType, int id)
-    {
-        this.id = id;
-        this.targetType = targetType;
-    }
+	/// <summary>
+	/// 消息框
+	/// </summary>
+	/// <param name="targetType">消息框绘制目标的类型</param>
+	/// <param name="id">消息框ID</param>
+	public EWMsgBoxHandleAttribute(Type targetType, int id)
+	{
+		this.id = id;
+		this.targetType = targetType;
+	}
 }
+#endif
