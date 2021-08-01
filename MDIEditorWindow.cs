@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if UNITY_EDITOR
+using System;
 using UnityEngine;
 using UnityEditor;
 using System.Reflection;
@@ -506,3 +507,4 @@ public class MDIEditorWindow : EditorWindow, IMessageDispatcher
         this.m_Handle.ClearObject(id);
     }
 }
+#endif
